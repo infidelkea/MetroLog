@@ -6,6 +6,7 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using MetroLog;
 using MetroLog.Targets;
+using MetroLog.WinPRT;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WP8Sample.Resources;
@@ -57,6 +58,7 @@ namespace WP8Sample
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
             LogManagerFactory.DefaultConfiguration.AddTarget(LogLevel.Trace, LogLevel.Fatal, new DebugTarget());
+            LogManagerFactory.DefaultConfiguration.AddTarget(LogLevel.Trace, LogLevel.Fatal, new FileStreamingTarget());
 
         }
 
